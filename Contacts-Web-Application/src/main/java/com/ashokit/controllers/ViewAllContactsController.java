@@ -10,6 +10,7 @@ public class ViewAllContactsController {
 	@GetMapping("/viewall")
 	public String viewAllContactsPage() {
 		System.out.println("view controller");
+		System.out.println("view controller");
 		return "viewcontacts";
 	}
 }

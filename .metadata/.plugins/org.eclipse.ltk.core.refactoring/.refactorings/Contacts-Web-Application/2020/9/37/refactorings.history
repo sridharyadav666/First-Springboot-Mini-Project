@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.ashokit.model.ContactModel.java&apos; to &apos;Contact.java&apos;&#x0D;&#x0A;- Original project: &apos;Contacts-Web-Application&apos;&#x0D;&#x0A;- Original element: &apos;com.ashokit.model.ContactModel.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.ashokit.model.Contact.java&apos;" description="Rename compilation unit &apos;ContactModel.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.ashokit.model{ContactModel.java" name="Contact.java" references="false" stamp="1599731132310" version="1.0"/>
+</session>

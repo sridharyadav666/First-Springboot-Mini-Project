@@ -1,0 +1,7 @@
+package com.ashokit.persistance;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Contactrepository extends JpaRepository<T, ID> {
+
+}

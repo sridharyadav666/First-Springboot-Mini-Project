@@ -1,0 +1,26 @@
+package com.ashokit.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.ashokit.model.Contact;
+
+@Controller
+public class NewContactController {
+
+	
+	@GetMapping("/")
+	public String welcomepage() {
+		
+		System.out.println("welcome page method of controller class");
+		return "index";
+	}
+	@GetMapping("/add")
+	public String statusofContact(@ModelAttribute Contact c) {
+		
+		
+		return "status";
+	}
+	
+}

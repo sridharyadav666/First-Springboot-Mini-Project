@@ -1,0 +1,17 @@
+package com.ashokit.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class NewContactController {
+
+	
+	@GetMapping("/")
+	public String welcomepage() {
+		
+		System.out.println("welcome page method of controller class");
+		return "index";
+	}
+	
+}

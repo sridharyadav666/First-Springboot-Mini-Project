@@ -11,6 +11,7 @@ public class ViewAllContactsController {
 	public String viewAllContactsPage() {
 		System.out.println("view controller");
 		System.out.println("view controller");
+		System.out.println("pulling");
 		return "viewcontacts";
 	}
 }

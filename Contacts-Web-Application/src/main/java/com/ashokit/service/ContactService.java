@@ -3,12 +3,13 @@ package com.ashokit.service;
 import java.util.List;
 
 import com.ashokit.entity.ContactsEntity;
+import com.ashokit.model.Contact;
 
 
 public interface ContactService {
 
 	
-	public boolean addNewContact(ContactsEntity entity);
+	public boolean addNewContact(Contact cpojo);
 	public List<ContactsEntity> getAllContacts();
 	public ContactsEntity getContactById(Integer cid);
 	public boolean updateContact(ContactsEntity entity);

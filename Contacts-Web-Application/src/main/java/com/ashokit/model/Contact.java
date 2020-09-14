@@ -7,6 +7,7 @@ public class Contact {
 
 	private Integer cid;
 	private String cname;
-	private Long cnumber;
 	private String email;
+	private Long cnumber;
+	
 }

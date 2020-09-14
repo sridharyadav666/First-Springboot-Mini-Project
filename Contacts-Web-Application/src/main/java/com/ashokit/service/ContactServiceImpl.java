@@ -1,6 +1,8 @@
 package com.ashokit.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +27,29 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Override
-	public List<ContactsEntity> getAllContacts() {
+	public List<Contact> getAllContacts() {
+		List<Contact> clist=new ArrayList<Contact>();
 		List<ContactsEntity> list = cntcrepo.findAll();
-		return list;
+		for (ContactsEntity contact : list) {
+			Contact c=new Contact();
+		BeanUtils.copyProperties(contact, c);
+			clist.add(c);
+		}
+		return clist;
 	}
 
 	@Override
-	public ContactsEntity getContactById(Integer cid) {
-		// TODO Auto-generated method stub
-		return null;
+	public Contact getContactById(Integer cid) {
+		
+		Optional<ContactsEntity> optional = cntcrepo.findById(cid);
+		Contact cont=new Contact();
+		if(optional.isPresent()) {
+			
+			ContactsEntity entity = optional.get();
+			BeanUtils.copyProperties(entity, cont);
+		}
+		
+		return cont;
 	}
 
 	@Override
@@ -44,8 +60,8 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public boolean deleteContact(Integer cid) {
-		// TODO Auto-generated method stub
-		return false;
+		cntcrepo.deleteById(cid);
+		return true;
 	}
 
 }

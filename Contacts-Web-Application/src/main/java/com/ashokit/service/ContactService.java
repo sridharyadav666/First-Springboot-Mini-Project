@@ -10,8 +10,8 @@ public interface ContactService {
 
 	
 	public boolean addNewContact(Contact cpojo);
-	public List<ContactsEntity> getAllContacts();
-	public ContactsEntity getContactById(Integer cid);
+	public List<Contact> getAllContacts();
+	public Contact getContactById(Integer cid);
 	public boolean updateContact(ContactsEntity entity);
 	public boolean deleteContact(Integer cid);
 	

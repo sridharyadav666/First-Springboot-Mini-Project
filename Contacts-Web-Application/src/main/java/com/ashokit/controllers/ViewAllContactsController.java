@@ -23,7 +23,6 @@ public class ViewAllContactsController {
    
 	@RequestMapping("/editContact")
 	public String editLinkHandler(@RequestParam("id") Integer cid, Model model) {
-		
 		Contact contactById = contactService.getContactById(cid);
 		System.out.println("edit controller");
 		model.addAttribute("contacts", contactById);
@@ -31,10 +30,8 @@ public class ViewAllContactsController {
 	}
 	@RequestMapping("/deleteContact")
 	public String deleteLinkHandler(@RequestParam("id") Integer cid, RedirectAttributes rattr) {
-		
 		boolean deleteContact = contactService.deleteContact(cid);
 		rattr.addFlashAttribute("dltmsg","Contact Deleted Successfully");
-		
 		return "redirect:viewall";
 	}
 }

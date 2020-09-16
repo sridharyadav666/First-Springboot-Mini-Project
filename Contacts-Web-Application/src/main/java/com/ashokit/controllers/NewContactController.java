@@ -15,9 +15,6 @@ import com.ashokit.entity.ContactsEntity;
 import com.ashokit.model.Contact;
 import com.ashokit.service.ContactService;
 
-
-
-
 @Controller
 public class NewContactController {
     
@@ -33,30 +30,23 @@ public class NewContactController {
 	@PostMapping("/add")
 	public String newContactformHandler(@ModelAttribute("contacts") Contact cpojo, RedirectAttributes redrct) {
 		if(cpojo.getCid()!=null) {
-			
 			redrct.addFlashAttribute("msg","contact updated Successfully");
 		}else {
 			redrct.addFlashAttribute("msg", "contact saved successfully");
 		}
 		boolean addNewContact = service.addNewContact(cpojo);
-		
-	return "redirect:savedcontact";
+		return "redirect:savedcontact";
 	}
 	
 	@GetMapping("/savedcontact")
 	public String contactSavedStatus(Model model) {
-		
-	
 	model.addAttribute("contacts",new Contact());
-	
 	return "index";
 	}
 	@RequestMapping("/viewall")
 	public String viewAllContactslinkhandler(Model model) {
 		List<Contact> allContacts = service.getAllContacts();
-		
-        model.addAttribute("contacts", allContacts);
-		
+		model.addAttribute("contacts", allContacts);
 		return "viewcontacts";
 	}
 	

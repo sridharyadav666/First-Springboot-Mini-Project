@@ -6,6 +6,9 @@ import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ashokit.entity.ContactsEntity;
@@ -29,7 +32,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public List<Contact> getAllContacts() {
 		List<Contact> clist=new ArrayList<Contact>();
-		List<ContactsEntity> list = cntcrepo.findAll();
+	    List<ContactsEntity> list = cntcrepo.findAll();
 		for (ContactsEntity contact : list) {
 			Contact c=new Contact();
 		BeanUtils.copyProperties(contact, c);
@@ -40,21 +43,17 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public Contact getContactById(Integer cid) {
-		
 		Optional<ContactsEntity> optional = cntcrepo.findById(cid);
 		Contact cont=new Contact();
 		if(optional.isPresent()) {
-			
 			ContactsEntity entity = optional.get();
 			BeanUtils.copyProperties(entity, cont);
 		}
-		
 		return cont;
 	}
 
 	@Override
 	public boolean updateContact(ContactsEntity entity) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

@@ -10,11 +10,11 @@
 <title>Insert title here</title>
 <!--  <link rel="stylesheet" href="style.css">-->
 </head>
-<p><font color='green'>${msg}</font></p><br>
+<p align="center"><font color='green'>${msg}</font></p><br>
 <body>
 
 <form:form action="add" modelAttribute="contacts" method="post">
-<table>
+<table align="center">
 <tr>
 <td><form:hidden path="cid"/></td>
 </tr>
@@ -36,7 +36,7 @@
 </tr>
 
 </table>
-<a href="viewall">View All Contacts</a>
+<p align="center"><a href="viewall">View All Contacts</a></p>
 </form:form>
 
 
